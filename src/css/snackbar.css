@@ -1,0 +1,151 @@
+:root {
+  --text: #2e2f42;
+  --muted: rgba(46, 47, 66, 0.7);
+  --border: rgba(46, 47, 66, 0.35);
+  --border-hover: rgba(46, 47, 66, 0.65);
+  --bg: #ffffff;
+  --surface: #f7f7fb;
+  --radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.form {
+  width: min(560px, 92vw);
+  margin: 48px auto;
+  padding: 28px;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.form input[type="number"] {
+  height: 44px;
+  padding: 10px 12px;
+
+  font: inherit;
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  outline: transparent;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.form input[type="number"]:hover {
+  border-color: var(--border-hover);
+}
+
+.form input[type="number"]:focus {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 0 3px rgba(100, 80, 255, 0.18);
+}
+
+/* Fieldset */
+.form fieldset {
+  margin: 0;
+  padding: 16px 14px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.form legend {
+  padding: 0 8px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.form fieldset label {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+
+  margin-right: 18px;
+  font-size: 16px;
+}
+
+.form input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #6c63ff; 
+}
+
+/* Submit button */
+.form button[type="submit"] {
+  height: 44px;
+  width: 100%;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #efeff7;
+
+  font: inherit;
+  font-weight: 600;
+  color: var(--text);
+
+  cursor: pointer;
+  transition: transform 120ms ease, background-color 200ms ease, border-color 200ms ease;
+}
+
+.form button[type="submit"]:hover {
+  background: #e7e7f3;
+  border-color: var(--border-hover);
+}
+
+.form button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+.go-back,
+a.go-back {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 40px;
+  padding: 0 14px;
+  margin: 0 auto;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+
+  color: var(--text);
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.go-back:hover,
+a.go-back:hover {
+  border-color: var(--border-hover);
+  background: rgba(46, 47, 66, 0.04);
+}
